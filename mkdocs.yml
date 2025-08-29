@@ -1,0 +1,4 @@
+site_name: Molecular Dynamics Blog
+site_url: https://shaunak-badani.github.io/MDBlog
+theme:
+  name: material
