@@ -1,4 +1,7 @@
 site_name: Molecular Dynamics Blog
+site_author: Shaunak Badani
+site_description: A blog that helps break down Molecular Dynamics and statistical mechanics concepts into simpler, byte-sized nuggets of information.
 site_url: https://shaunak-badani.github.io/MDBlog
 theme:
   name: material
+  logo: assets/md_scenario_icon.png
