@@ -1,0 +1,465 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A blog that helps break down Molecular Dynamics and statistical mechanics concepts into simpler, byte-sized nuggets of information.">
+      
+      
+        <meta name="author" content="Shaunak Badani">
+      
+      
+        <link rel="canonical" href="https://shaunak-badani.github.io/MDBlog/3.Dumbing-it-down/">
+      
+      
+        <link rel="prev" href="../2.The-Why/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Dumbing down the complex molecular system - Molecular Dynamics Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dumbing-down-the-complex-molecular-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Molecular Dynamics Blog" class="md-header__button md-logo" aria-label="Molecular Dynamics Blog" data-md-component="logo">
+      
+  <img src="../assets/md_scenario_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Molecular Dynamics Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dumbing down the complex molecular system
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Molecular Dynamics Blog" class="md-nav__button md-logo" aria-label="Molecular Dynamics Blog" data-md-component="logo">
+      
+  <img src="../assets/md_scenario_icon.png" alt="logo">
+
+    </a>
+    Molecular Dynamics Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.The-What/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What is Molecular Dynamics (MD)?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.The-Why/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why do we perform MD simulations?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dumbing down the complex molecular system
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dumbing-down-the-complex-molecular-system">Dumbing down the complex molecular system</h1>
+<p>At the end of the day, protein molecules and other different types of molecules are just a set of atoms bunched together. They each exert a force on each other. As a result, every atom experiences a resultant force, which causes it to move in a certain direction:</p>
+<figure>
+  <img _="," align="left" alt="Image title" src="../assets/Figure_1.png" width="300" />
+  <img _="," align="left" alt="Image title" src="../assets/Figure_2.png" width="300" />
+</figure>
+<p>For the purposes of representation, all attractive forces have been portrayed in the figure on the left, but there could be repulsive forces between the two atoms. The resultant force exerted on atom 1 is shown in the figure on the right, which will determine the direction of movement of the atom.</p>
+<blockquote>
+<p>If we know the force and the mass of the atom, we can calculate the acceleration of the atom. Why can't we use Newton's second equation of motion to determine where the particle would be positioned at a certain time in the future?</p>
+</blockquote>
+<p>Well, lets take a look at how we CAN solve a physics problem using Newton's second equation of motion:</p>
+<blockquote>
+<p>Consider a ball falling from a large height. At time t = 0, it is at a height of 1000m, and it has no speed at the given time. What is the height of the ball at t = 10s?</p>
+</blockquote>
+<p>We know that the particle falls at a constant acceleration of <span class="arithmatex">\(g = 9.8 \frac{m}{s^2}\)</span> in the downward direction. By Newton's second equation of motion, after time <span class="arithmatex">\(t\)</span>:</p>
+<div class="arithmatex">\[
+\begin{align*}
+s &amp;= ut + \frac{1}{2}at^2
+\end{align*}
+\]</div>
+<p>Where <span class="arithmatex">\(s\)</span> = displacement, <span class="arithmatex">\(u\)</span> is the initial velocity <span class="arithmatex">\((= 0)\)</span>, and <span class="arithmatex">\(a\)</span> is the acceleration of the ball. In the equation, we write <span class="arithmatex">\(a = -g\)</span> to denote that the acceleration is in the downward direction.</p>
+<div class="arithmatex">\[
+\begin{align*}
+s &amp;= \frac{1}{2} (-9) (10)^2 \\
+&amp;= -450 \\
+x_t - x_0 &amp;= -450 \\
+x_t - 1000 &amp;= -450 \\
+x_t &amp;= 550m
+\end{align*}
+\]</div>
+<p>Simple enough, right? We were able to find out the particle of the ball after 5 seconds. Using the above equation, we can find out the position of the particle <em>at any time before it hits the ground</em> by basic substitution.</p>
+<p>In order to find out why this can't directly be applied to our molecular system, we have to trace the roots of Newton's second equation of motion. Where does it come from?</p>
+<p>Let's take a closer look at Newton's second equation of motion. We know that acceleration is the rate of change of velocity. Starting from there:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\frac{dv}{dt} &amp;= a 
+\end{align*}
+\]</div>
+<p>Multiplying both sides by <span class="arithmatex">\(dt\)</span> and integrating both sides from <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(t\)</span>,</p>
+<div class="arithmatex">\[
+\begin{align*}
+\int_{u}^vdv &amp;= \int_{0}^t a dt 
+\end{align*}
+\]</div>
+<p>Where <span class="arithmatex">\(u\)</span> denotes initial velocity of the particle and <span class="arithmatex">\(v\)</span> denotes the velocity of the particle at time <span class="arithmatex">\(t\)</span>.</p>
+<p>Derivation of Newton's second equation of motion <strong>assumes that the acceleration of the particle is constant</strong>. In the case of the ball, acceleration of the ball is constant with time - equal to <span class="arithmatex">\(g\)</span> in the downward direction.</p>
+<figure>
+  <img _="," align="left" alt="Image title" src="../assets/Figure_3.png" width="300" />
+  <img _="," align="left" alt="Image title" src="../assets/Figure_4.png" width="300" />
+</figure>
+<p>But in the case of atomistic interactions, that's not quite true. One of the forces that acts between two atoms is a bonded force that depends on the distance between the two atoms. Consider atom 1 in figure 1, and the interaction between atom 1 and 2. The force on atom 1 due to the interaction can be written as follows:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\textbf{F}_{b1} &amp;= \frac{1}{2} k_{12} (\textbf{q}_2 - \textbf{q}_1)
+\end{align*}
+\]</div>
+<p>Where <span class="arithmatex">\(\textbf{F}_{b1}\)</span> is the force on atom 1 solely due to this bonded interaction between atom 1 and 2, <span class="arithmatex">\(\textbf{q}_1\)</span> is the position vector of atom 1, and <span class="arithmatex">\(\textbf{q}_2\)</span> is the position vector of atom 2. In 3 dimensions, </p>
+<ul>
+<li><span class="arithmatex">\(\textbf{q}_1 = [q_{1x}, q_{1y}, q_{1z}]\)</span></li>
+<li><span class="arithmatex">\(\textbf{q}_2 = [q_{2x}, q_{2y}, q_{2z}]\)</span></li>
+<li><span class="arithmatex">\(q_{1x}, q_{1y}, q_{1z}, q_{2x}, q_{2y}, q_{2z}\)</span> are all scalar quantities.</li>
+</ul>
+<p>In effect, the Force is a function of the position of the position, which changes with time:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\textbf{F}_{b1} &amp;= f(\textbf{q}_1(t)) \\
+&amp;= g(t)
+\end{align*}
+\]</div>
+<p>By Newton's second law, the acceleration is also a function of time:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\textbf{a}(t) &amp;= \frac{\textbf{F}(t)}{m_1}
+\end{align*}
+\]</div>
+<p>Note that the above force calculated is just a result of the bonded force between atom 1 and atom 2, to get the point across. We have many more forces acting on atom 1, but those will be explored later.</p>
+<p>Furthermore, the acceleration is not a simple function of time, like <span class="arithmatex">\(a = c t^2\)</span> that can be easily integrated. The acceleration is a function of the position itself, which is a major issue. </p>
+<ul>
+<li>The position is dependent on the net acceleration of the atom.</li>
+<li>The acceleration of the atom is dependent on the position of the atom.</li>
+</ul>
+<p>So how do we integrate this equation? Let's take a look at that in the next chapter.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
