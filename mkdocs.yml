@@ -5,6 +5,18 @@ site_url: https://shaunak-badani.github.io/MDBlog
 theme:
   name: material
   logo: assets/md_scenario_icon.png
+  features:
+    - navigation.footer
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/shaunak-badani
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/shaunak-badani-b70b88176/
+
+copyright: Copyright &copy; 2025 Shaunak Badani
+    
 
 markdown_extensions:
   - pymdownx.arithmatex:
